@@ -12,7 +12,7 @@ import VuexDemo from './components/VuexDemo'
 export default {
   name: 'App',
   components: {
-    HelloWorld,VuexDemo
+    HelloWorld, VuexDemo
   }
 }
 </script>

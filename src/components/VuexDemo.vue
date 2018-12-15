@@ -9,44 +9,45 @@
             </div>
             <div class="keys-area">
                 <!-- 键盘区域 -->
-                <keyboard v-for="(item,index) in list" :value="item"></keyboard> <!--v-bind 将告诉vue :value是javascript表达式而不是字符串-->
+                <keyboard v-for="item in list" :value="item"></keyboard> <!--v-bind 将告诉vue :value是javascript表达式而不是字符串-->
             </div>
         </div>
+        <img src="../../static/images/process.png" style="display:block;margin:0 auto;" alt="">
     </div>
 </template>
 <script>
 import keyboard from '@/components/keyboard'
 
 export default {
-    components:{
-        keyboard
-    },
-    data() {
-        return {
-            list:[
-                'clear', '+', '-', '*',
-                '7', '8', '9', '/',
-                '4', '5', '6', '0',
-                '1', '2', '3', '=',
-            ]
-        }
-    },
-    computed:{//增加计算属性
-        result(){
-            return this.$store.state.count
-        },
-        result2(){//计算结果
-            return this.$store.state.result
-        },
-        enter(){
-            return this.$store.state.enter
-        }
-    },
-    methods:{
-        add:function(){
-             this.$store.commit('increment')
-        }
+  components: {
+    keyboard
+  },
+  data () {
+    return {
+      list: [
+        'clear', '+', '-', '*',
+        '7', '8', '9', '/',
+        '4', '5', '6', '0',
+        '1', '2', '3', '='
+      ]
     }
+  },
+  computed: {// 增加计算属性
+    result () {
+      return this.$store.state.count
+    },
+    result2 () { // 计算结果
+      return this.$store.state.result
+    },
+    enter () {
+      return this.$store.state.enter
+    }
+  },
+  methods: {
+    add: () => {
+      this.$store.commit('increment')
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
@@ -63,7 +64,5 @@ export default {
                 font-size 24px
         .keys-area
             overflow hidden
-            border-left 1px solid #ddd        
+            border-left 1px solid #ddd
 </style>
-
-

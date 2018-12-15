@@ -1,20 +1,20 @@
 <template>
-    <div 
-        class="keyboard" 
+    <div
+        class="keyboard"
         @click="enterEvent"
         :data-value="value"
     >{{value}}</div>
 </template>
 <script>
 export default {
-    name:'keyboard',
-    props:['value'],
-    methods:{
-        enterEvent:function(event){
-            //每次提交修改store中的值
-            this.$store.commit('calculate',event.target.dataset.value);
-        }
+  name: 'keyboard',
+  props: ['value'],
+  methods: {
+    enterEvent: (event) => {
+      // 每次提交修改store中的值
+      this.$store.commit('calculate', event.target.dataset.value)
     }
+  }
 }
 </script>
 <style lang="stylus" scoped>
@@ -31,5 +31,3 @@ export default {
         &:hover
             background #ddd
 </style>
-
-
